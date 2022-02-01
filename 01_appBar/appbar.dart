@@ -11,15 +11,32 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home: Scaffold(
           appBar: AppBar(
-            title: const Text('Glutter Demo'),
+            backgroundColor: Colors.yellow,
+            title: const Text(
+              'Glutter Demo',
+              style: TextStyle(color: Colors.black),
+            ),
             centerTitle: true,
-            leading: const Icon(Icons.home),
+            leading: const Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
             actions: const [
-              Icon(Icons.place_outlined),
-              Icon(Icons.place_rounded),
+              Icon(
+                Icons.place_outlined,
+                color: Colors.amber,
+              ),
+              Icon(
+                Icons.place_rounded,
+                color: Colors.amber,
+              ),
             ],
           ),
-          body: const Text('Hello World'),
+          body: const Center(
+              child: Text(
+            'Hello World',
+            style: TextStyle(fontSize: 30, color: Colors.black),
+          )),
         ));
   }
 }
