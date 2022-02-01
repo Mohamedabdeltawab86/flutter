@@ -21,11 +21,10 @@ class AppBr extends StatelessWidget {
               print('Navigation menu');
             },
           ),
-          actions: const[
+          actions: const [
             Icon(Icons.search),
             Icon(Icons.add),
             Icon(Icons.more_vert),
-
           ],
           centerTitle: true,
         ),
