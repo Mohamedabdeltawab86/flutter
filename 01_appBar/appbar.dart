@@ -1,44 +1,67 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const AppBr());
-}
+main() => runApp(const MyApp());
 
-class AppBr extends StatelessWidget {
-  const AppBr({Key? key}) : super(key: key);
+class MyApp extends StatelessWidget {
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: Text('AppBar Options'),
-          leading: IconButton(
-            icon: Icon(Icons.menu),
-            tooltip: 'Navigation menu',
-            onPressed: () {
-              print('Navigation menu');
-            },
+        title: 'Flutter Demo',
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.yellow,
+            title: const Text(
+              'Glutter Demo',
+              style: TextStyle(color: Colors.black),
+            ),
+            centerTitle: true,
+            leading: const Icon(
+              Icons.home,
+              color: Colors.black,
+            ),
+            actions: const [
+              Icon(
+                Icons.place_outlined,
+                color: Colors.amber,
+              ),
+              Icon(
+                Icons.place_rounded,
+                color: Colors.amber,
+              ),
+            ],
           ),
-          actions: const [
-            Icon(Icons.search),
-            Icon(Icons.add),
-            Icon(Icons.more_vert),
-          ],
-          centerTitle: true,
-        ),
-        body: const Center(
-          child: Text(
-            'Hello, world!',
-            style: TextStyle(
-              fontSize: 24,
-              fontWeight: FontWeight.bold,
-              color: Colors.blue,
+          body: Padding(
+            padding: const EdgeInsets.all(28.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                const Text(
+                  'Hello World',
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Roboto',
+                    color: Colors.black,
+                    letterSpacing: 1,
+                    height: 2,
+                    shadows: [
+                      Shadow(
+                        color: Colors.black,
+                        blurRadius: 10,
+                        offset: Offset(5, 5),
+                      ),
+                    ],
+
+                  ),
+                ),
+                const Icon(Icons.android),
+              ],
             ),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
