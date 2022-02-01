@@ -1,42 +1,45 @@
 import 'package:flutter/material.dart';
 
-main() => runApp(const MyApp());
+void main() {
+  runApp(const AppBr());
+}
 
-class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+class AppBr extends StatelessWidget {
+  const AppBr({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        home: Scaffold(
-          appBar: AppBar(
-            backgroundColor: Colors.yellow,
-            title: const Text(
-              'Glutter Demo',
-              style: TextStyle(color: Colors.black),
-            ),
-            centerTitle: true,
-            leading: const Icon(
-              Icons.home,
-              color: Colors.black,
-            ),
-            actions: const [
-              Icon(
-                Icons.place_outlined,
-                color: Colors.amber,
-              ),
-              Icon(
-                Icons.place_rounded,
-                color: Colors.amber,
-              ),
-            ],
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        appBar: AppBar(
+          title: Text('AppBar Options'),
+          leading: IconButton(
+            icon: Icon(Icons.menu),
+            tooltip: 'Navigation menu',
+            onPressed: () {
+              print('Navigation menu');
+            },
           ),
-          body: const Center(
-              child: Text(
-            'Hello World',
-            style: TextStyle(fontSize: 30, color: Colors.black),
-          )),
-        ));
+          actions: const[
+            Icon(Icons.search),
+            Icon(Icons.add),
+            Icon(Icons.more_vert),
+
+          ],
+          centerTitle: true,
+        ),
+        body: const Center(
+          child: Text(
+            'Hello, world!',
+            style: TextStyle(
+              fontSize: 24,
+              fontWeight: FontWeight.bold,
+              color: Colors.blue,
+            ),
+          ),
+        ),
+      ),
+    );
   }
 }
