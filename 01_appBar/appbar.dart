@@ -65,3 +65,5 @@ class MyApp extends StatelessWidget {
         ));
   }
 }
+// in github, to add an image to the reposity to be shown in the app
+
