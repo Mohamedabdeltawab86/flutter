@@ -41,10 +41,10 @@ class MyApp extends StatelessWidget {
                         TextButton(
                             onPressed: () {}, child: Text("Text Button")),
                         OutlinedButton(
-                            onPressed: () => print("رغد"),
+                            onPressed: () => print("Outlined Button"),
                             child: const Text("Outlined Button")),
                         ElevatedButton(
-                            onPressed: () => print('رزان'),
+                            onPressed: () => print('Elevated Button'),
                             child: const Text("Elevated Button")),
                       ],
                     ),
