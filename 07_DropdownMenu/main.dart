@@ -1,50 +1,56 @@
 import 'package:flutter/material.dart';
 
-main() => runApp(MyApp());
+void main() => runApp(MyApp());
 
 class MyApp extends StatefulWidget {
+  const MyApp({Key? key}) : super(key: key);
+
   @override
-  State<MyApp> createState() => _MyAppState();
+  _MyAppState createState() => _MyAppState();
 }
 
 class _MyAppState extends State<MyApp> {
-  String selectedCountry = 'EG';
-
+  String letter = 'A';
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Butttons'),
-        ),
-        body: Container(
-          width: double.infinity,
-          margin: EdgeInsets.all(20),
-          alignment: Alignment.center,
-          padding: const EdgeInsets.all(10),
-          child: DropdownButton(
-          items: [
-            'USA',
-            'EG',
-            'SA',
-            'UK',
-            'FR',
-          ]
-              .map((e) => DropdownMenuItem(
-                    child: Text("$e", style: TextStyle(fontSize: 20)),
-                    value: e,
-                  ))
-              .toList(),
-          onChanged: (String? val) {
-            setState(() {
-              selectedCountry = val!;
-            });
-          },
-          value: selectedCountry,
-        ),
-        ),
+        home: Scaffold(
+      appBar: AppBar(),
+      body: Container(
+        // width: 800,
+        // color: Colors.black,
+        alignment: Alignment.center,
+        margin: const EdgeInsets.all(20),
+        child: DropdownButton(
+            icon: const Icon(Icons.cached_outlined, color: Colors.red),
+            hint: Container(
+              width: double.infinity,
+              padding: const EdgeInsets.only(right: 20),
+              child: const Text(
+                'اختر حرفا مما يلي',
+                textDirection: TextDirection.rtl,
+                textAlign: TextAlign.right,
+              ),
+            ),
+            dropdownColor: Colors.amber[100],
+            underline: const Divider(
+              thickness: 0,
+            ),
+            isExpanded: true,
+            items: ['A', 'B', 'C']
+                .map((e) => DropdownMenuItem(
+                      child: Text(e,
+                          style:
+                              const TextStyle(fontSize: 30, color: Colors.red)),
+                      value: e,
+                    ))
+                .toList(),
+            onChanged: (String? val) {
+              setState(() {
+                letter = val!;
+              });
+            }),
       ),
-    );
+    ));
   }
 }
